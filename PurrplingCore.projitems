@@ -9,13 +9,28 @@
     <Import_RootNamespace>PurrplingCore</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Bridges\IJsonAssetsApi.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Events\IManagedEvent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Events\ManagedEvent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)InternalConstants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Lexing\LexTokens\ILexToken.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Lexing\LexTokens\LexBit.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Lexing\LexTokens\LexBitType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Lexing\LexTokens\LexFormatException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Lexing\Lexer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Lexing\LexTokens\LexTokenInput.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Lexing\LexTokens\LexTokenLiteral.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Lexing\LexTokens\LexTokenToken.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Lexing\LexTokens\LexTokenType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ObjectReferenceComparer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Patching\GamePatcher.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Patching\IPatch.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Patching\Patch.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SetOnce.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ParseDateException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Lexing\LexTokens\" />
   </ItemGroup>
 </Project>
