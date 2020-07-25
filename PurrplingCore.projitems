@@ -13,6 +13,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Events\IManagedEvent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Events\ManagedEvent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)InternalConstants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Timing\Countdown.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internal\IDrawable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internal\IUpdateable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Lexing\LexTokens\ILexToken.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Lexing\LexTokens\LexBit.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Lexing\LexTokens\LexBitType.cs" />
@@ -22,6 +25,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Lexing\LexTokens\LexTokenLiteral.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Lexing\LexTokens\LexTokenToken.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Lexing\LexTokens\LexTokenType.cs" />
+    <Compile Include="..\PurrplingCore\Movement\NpcMovementController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Movement\PathFinder.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ObjectReferenceComparer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Patching\GamePatcher.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Patching\IPatch.cs" />
@@ -32,5 +37,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Lexing\LexTokens\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Timing\" />
   </ItemGroup>
 </Project>
