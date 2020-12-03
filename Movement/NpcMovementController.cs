@@ -71,6 +71,7 @@ namespace PurrplingCore.Movement
         {
             this.follower = follower;
             this.pathFinder = pathFinder;
+            this.Speed = follower.Speed;
 
             this.characterMoveUp = typeof(Character).GetField("moveUp", BindingFlags.NonPublic | BindingFlags.Instance);
             this.characterMoveDown = typeof(Character).GetField("moveDown", BindingFlags.NonPublic | BindingFlags.Instance);
