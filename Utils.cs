@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PurrplingCore
 {
-    class Utils
+    static class Utils
     {
         private static bool TryParseRelativeDate(string strDate, out SDate date)
         {
@@ -46,6 +46,17 @@ namespace PurrplingCore
                 s[1], 
                 Convert.ToInt32(s[2].Substring(1))
             );
+        }
+
+        public static string CutText(string text, int maxChars)
+        {
+            if (text.Length < maxChars)
+                return text;
+
+            if (maxChars < 3)
+                return "...";
+
+            return text.Substring(0, maxChars - 3) + "...";
         }
     }
 }
