@@ -62,9 +62,10 @@ namespace PurrplingCore.Patching
                         this.knownConflictedPatches.Add(patchedMethod.Method);
                     }
                 }
-            } catch (Exception ex)
+            } 
+            catch (Exception ex)
             {
-                this.monitor.Log("Unable to check game patches. See log for more details.", LogLevel.Error);
+                this.monitor.Log("Unable to check game patches - See log for more details. If you are not modder, you can ignore this message.", this.paranoid ? LogLevel.Error : LogLevel.Debug);
                 this.monitor.Log(ex.ToString(), LogLevel.Trace);
             }
         }
