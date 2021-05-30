@@ -275,6 +275,12 @@ namespace PurrplingCore.Movement
             {
                 passableBuilding = tile.TileIndexProperties.TryGetValue("Passable", out passableBuilding);
             }
+
+            if (this.GameLocation is VolcanoDungeon dungeon && dungeon.IsCooledLava((int)tileLocation.X, (int)tileLocation.Y)) 
+            {
+                return true;
+            }
+
             return passable == null && (tile == null || (passableBuilding != null && passableBuilding)) && tmp != null;
         }
 
