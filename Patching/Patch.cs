@@ -1,4 +1,4 @@
-﻿using Harmony;
+﻿using HarmonyLib;
 using StardewModdingAPI;
 using System;
 
@@ -17,7 +17,7 @@ namespace PurrplingCore.Patching
         public abstract string Name { get; }
         public bool Applied { get; private set; }
 
-        protected abstract void Apply(HarmonyInstance harmony);
+        protected abstract void Apply(Harmony harmony);
 
         /// <summary>
         /// Setup and apply game patch
@@ -25,7 +25,7 @@ namespace PurrplingCore.Patching
         /// <param name="harmony"></param>
         /// <param name="monitor"></param>
         /// <exception cref="Exception">Any exception raised while appling game patch</exception>
-        public void Apply(HarmonyInstance harmony, IMonitor monitor)
+        public void Apply(Harmony harmony, IMonitor monitor)
         {
             if (Instance == null)
             {
