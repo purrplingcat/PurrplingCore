@@ -1,4 +1,4 @@
-﻿using Harmony;
+﻿using HarmonyLib;
 using StardewModdingAPI;
 using System;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ namespace PurrplingCore.Patching
     {
         private readonly IMonitor monitor;
         private readonly bool paranoid;
-        private readonly HarmonyInstance harmony;
+        private readonly Harmony harmony;
         private readonly List<MethodBase> knownConflictedPatches;
 
         public GamePatcher(string uid, IMonitor monitor, bool paranoid = true)
@@ -19,7 +19,7 @@ namespace PurrplingCore.Patching
             this.monitor = monitor;
             this.paranoid = paranoid;
             this.knownConflictedPatches = new List<MethodBase>();
-            this.harmony = HarmonyInstance.Create(uid);
+            this.harmony = new Harmony(uid);
         }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace PurrplingCore.Patching
                 .ToArray();
             foreach (var method in methods)
             {
-                Harmony.Patches info = this.harmony.GetPatchInfo(method);
+                HarmonyLib.Patches info = Harmony.GetPatchInfo(method);
 
                 if (info != null && info.Owners.Contains(this.harmony.Id))
                 {
@@ -98,14 +98,14 @@ namespace PurrplingCore.Patching
 
         public class PatchedMethod
         {
-            public PatchedMethod(MethodBase method, Harmony.Patches patchInfo)
+            public PatchedMethod(MethodBase method, HarmonyLib.Patches patchInfo)
             {
                 this.Method = method;
                 this.PatchInfo = patchInfo;
             }
 
             public MethodBase Method { get; }
-            public Harmony.Patches PatchInfo { get; }
+            public HarmonyLib.Patches PatchInfo { get; }
         }
     }
 }
