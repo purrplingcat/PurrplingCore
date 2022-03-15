@@ -2,7 +2,7 @@
 
 namespace PurrplingCore.Events
 {
-    internal class ManagedEvent<TEventArgs> : IManagedEvent
+    public class ManagedEvent<TEventArgs> : IManagedEvent
     {
         /// <summary>The underlying event.</summary>
         private event EventHandler<TEventArgs> Event;
@@ -50,7 +50,7 @@ namespace PurrplingCore.Events
                     this.EventName, this.ListenersCount));
         }
 
-        internal class EventFiredEventArgs
+        public class EventFiredEventArgs
         {
             public EventFiredEventArgs(string eventName, int listenersCount)
             {

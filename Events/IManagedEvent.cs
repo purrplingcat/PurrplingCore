@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PurrplingCore.Events
 {
-    internal interface IManagedEvent
+    public interface IManagedEvent
     {
         /// <summary>A human-readable name for the event.</summary>
         string EventName { get; }
